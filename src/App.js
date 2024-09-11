@@ -3,6 +3,7 @@ import Accordian from "./components/accordian/index";
 import ImageSlider from "./components/image-slider";
 import RandomColor from "./components/random-color/index";
 import StartRating from "./components/start-rating/index";
+import LoadMoreData from "./components/load-more-data/index"
 import Intro from "./components/intro";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -28,6 +29,9 @@ function App() {
             <li>
               <Link to="/image-slider">Image Slider</Link>
             </li>
+            <li>
+              <Link to="/load-more-data">LoadMoreData</Link>
+            </li>
           </ul>
         </nav>
 
@@ -43,6 +47,8 @@ function App() {
               <ImageSlider url={"https://picsum.photos/v2/list"} page={"1"} limit={"10"} />
             }
           />
+           <Route path="/load-more-data" element={<LoadMoreData />} />
+          
         </Routes>
       </div>
     </Router>
