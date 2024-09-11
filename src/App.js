@@ -3,9 +3,11 @@ import Accordian from "./components/accordian/index";
 import ImageSlider from "./components/image-slider";
 import RandomColor from "./components/random-color/index";
 import StartRating from "./components/start-rating/index";
-import LoadMoreData from "./components/load-more-data/index"
+import LoadMoreData from "./components/load-more-data/index";
+import menus from "./components/tree-view/data";
 import Intro from "./components/intro";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import TreeView from "./components/tree-view";
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
         {/* Navigation Bar */}
         <nav>
           <ul>
-          <li>
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -32,23 +34,43 @@ function App() {
             <li>
               <Link to="/load-more-data">LoadMoreData</Link>
             </li>
+            <li>
+              <Link to="/tree-view"> Tree View</Link>
+            </li>
           </ul>
         </nav>
 
         {/* Routes */}
         <Routes>
-        <Route path="/" element={<Intro/>} />
+          {/* Intro Component */}
+          <Route path="/" element={<Intro />} />
+
+          {/* Accordian Component */}
           <Route path="/accordion" element={<Accordian />} />
+
+          {/* RandomColor Component */}
           <Route path="/random-color" element={<RandomColor />} />
+
+          {/* StartRating Component */}
           <Route path="/star-rating" element={<StartRating noOfStars={10} />} />
+
+          {/* ImageSlider Component */}
           <Route
             path="/image-slider"
             element={
-              <ImageSlider url={"https://picsum.photos/v2/list"} page={"1"} limit={"10"} />
+              <ImageSlider
+                url={"https://picsum.photos/v2/list"}
+                page={"1"}
+                limit={"10"}
+              />
             }
           />
-           <Route path="/load-more-data" element={<LoadMoreData />} />
-          
+
+          {/* LoadMoreData Component */}
+          <Route path="/load-more-data" element={<LoadMoreData />} />
+
+          {/* TreeView Component */}
+          <Route path="/tree-view" element={<TreeView menus={menus} />} />
         </Routes>
       </div>
     </Router>
