@@ -23,7 +23,6 @@ export default function LoadMoreData() {
         setLoading(false);
       }
     } catch (e) {
-      console.log(e);
       setLoading(false);
     }
   }
