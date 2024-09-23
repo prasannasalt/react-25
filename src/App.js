@@ -8,7 +8,8 @@ import QRCodeGenerator from "./components/qr-code-generator/index";
 import LightDarkMode from "./components/light-dark-mode/index";
 import ScrollIndicator from "./components/scroll-indicator/index";
 import menus from "./components/tree-view/data";
-import Tabs from "./components/custom-tabs/tabs";
+import TabTest from "./components/custom-tabs/tabs-test";
+import ModalTest from "./components/custom-model-popup/model-test"
 import Intro from "./components/intro";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import TreeView from "./components/tree-view";
@@ -52,6 +53,9 @@ function App() {
             </li>
             <li>
               <Link to="/custom-tabs"> Custom Tabs </Link>
+            </li>
+            <li>
+              <Link to="/popup"> Pop Up </Link>
             </li>
           </ul>
         </nav>
@@ -99,7 +103,10 @@ function App() {
             }
           />
           {/* Custom Tabs */}
-          <Route path="/custom-tabs" element={<Tabs />} />
+          <Route path="/custom-tabs" element={<TabTest />} />
+
+          {/* Model Pop Up */}
+          <Route path="/popup" element={<ModalTest />} />
         </Routes>
       </div>
     </Router>
